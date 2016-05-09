@@ -1,0 +1,31 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Minis</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Description</th>
+      <th>Picture</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @minis.each do |mini| %>
+      <tr>
+        <td><%= mini.name %></td>
+        <td><%= mini.description %></td>
+        <td><%= mini.picture %></td>
+        <td><%= link_to 'Show', mini %></td>
+        <td><%= link_to 'Edit', edit_mini_path(mini) %></td>
+        <td><%= link_to 'Destroy', mini, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Mini', new_mini_path %>

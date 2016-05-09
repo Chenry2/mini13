@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @mini.name %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @mini.description %>
+</p>
+
+<p>
+  <strong>Picture:</strong>
+  <%= image_tag(@mini.picture_url, :width => 600) if @mini.picture.present? %>
+</p>
+
+<%= link_to 'Edit', edit_mini_path(@mini) %> |
+<%= link_to 'Back', minis_path %>
